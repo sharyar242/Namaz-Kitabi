@@ -15,7 +15,9 @@ abstract class NamazDatabase: RoomDatabase() {
         private lateinit var INSTANCE : NamazDatabase
 
         fun getInstance(context: Context): NamazDatabase=
-            Room.databaseBuilder(context,NamazDatabase::class.java,"Namaz-kitabi").createFromAsset("Namaz-kitabi").build()
+            Room.databaseBuilder(context,NamazDatabase::class.java,"Namaz-kitabi")
+                .createFromAsset("Namaz-kitabi")
+                .build()
     }
 
 
