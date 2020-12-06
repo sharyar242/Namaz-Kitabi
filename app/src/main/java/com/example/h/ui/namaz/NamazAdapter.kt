@@ -1,4 +1,4 @@
-package com.example.h.ui.home
+package com.example.h.ui.namaz
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.h.R
 import com.example.h.data.model.Articles
+import com.example.h.ui.paklik.PaklikAdapter
 import kotlinx.android.synthetic.main.item_article.view.*
 
-class AdapterArticle : RecyclerView.Adapter<AdapterArticle.ViewHolder>() {
+class NamazAdapter : RecyclerView.Adapter<NamazAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
 
@@ -20,10 +21,10 @@ class AdapterArticle : RecyclerView.Adapter<AdapterArticle.ViewHolder>() {
 
     var list : List<Articles> = listOf()
 
-    set(value) {
-        field= value
-        notifyDataSetChanged()
-    }
+        set(value) {
+            field= value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
@@ -35,5 +36,4 @@ class AdapterArticle : RecyclerView.Adapter<AdapterArticle.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.populateModels(list[position])
     }
-
 }

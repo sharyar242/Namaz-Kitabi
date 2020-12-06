@@ -3,23 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_shahada">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.h.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_shahada"
+        android:name="com.example.h.ui.shahada.ShahadaFragment"
+        android:label="@string/menu_shahada"
+        tools:layout="@layout/fragment_paklik" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.h.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_paklik"
+        android:name="com.example.h.ui.paklik.PaklikFragment"
+        android:label="@string/menu_paklik"
+        tools:layout="@layout/fragment_shahada" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.h.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_namaz"
+        android:name="com.example.h.ui.namaz.NamazFragment"
+        android:label="@string/menu_namaz"
+        tools:layout="@layout/fragment_namaz" />
+
+    <fragment
+        android:id="@+id/nav_sureler"
+        android:name="com.example.h.ui.sureler.SurelerFragment"
+        android:label="@string/menu_sureler"
+        tools:layout="@layout/fragment_sureler" />
+
+    <fragment
+        android:id="@+id/nav_dualar"
+        android:name="com.example.h.ui.dualar.DualarFragment"
+        android:label="@string/menu_dualar"
+        tools:layout="@layout/fragment_dualar" />
+
+
 </navigation>

@@ -2,12 +2,20 @@
     <string name="app_name">Hамаз оқыў қағыйдалары</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Hамаз китабы</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_shahada">Шәҳада</string>
+    <string name="menu_paklik">Таҳәрат, таяммум ҳәм ғусыл</string>
+    <string name="menu_namaz">Намаз оқыў тәртиплери</string>
+    <string name="menu_namaz_zikirler">Намаздан кейинги зикирлер</string>
+    <string name="menu_namaz_buziladi">Намаз бузылатуғын жағдайлар</string>
+    <string name="menu_janaza_namazi">Жаназа намазы тәртиби</string>
+    <string name="menu_imamgaEriw_xtb">Мүсәпирдиң намазы, имамға ериў, қаза намаз</string>
+    <string name="menu_xayit_ham_juma_namazi">Ҳайыт ҳәм жума намазлары</string>
+    <string name="menu_sureler">Қысқа сүрелер</string>
+    <string name="menu_dualar">Жүдә зәрүр дуўалар</string>
+    <string name="menu_40Parz">Қырық парыз</string>
 </resources>
