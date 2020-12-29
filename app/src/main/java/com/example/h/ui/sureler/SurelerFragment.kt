@@ -1,25 +1,35 @@
 package com.example.h.ui.sureler
 
+import android.os.Build
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.text.Html
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import com.example.h.MainActivity
 import com.example.h.R
-import com.example.h.ui.namaz.NamazViewModel
+import com.example.h.data.NamazDatabase
+import com.example.h.data.model.Article
+import kotlinx.android.synthetic.main.fragment_shahada.*
 
-class SurelerFragment: Fragment() {
+class SurelerFragment: Fragment(R.layout.fragment_shahada),SurelerView {
 
-    private lateinit var surelerViewModel: SurelerViewModel
+    private lateinit var presenter: SurelerPresenter
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        surelerViewModel =
-            ViewModelProviders.of(this).get(SurelerViewModel::class.java)
-        return inflater.inflate(R.layout.fragment_namaz, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val dao = NamazDatabase.getInstance(requireContext()).articleDao()
+        presenter = SurelerPresenter(dao,this)
+        presenter.getAllSureler(11)
+        (requireActivity() as MainActivity).supportActionBar?.title = "Қысқа сүрелер"
     }
+
+    override fun setAllSureler(article: Article) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            textShahada.text = Html.fromHtml(article.article, Html.FROM_HTML_MODE_COMPACT)
+        } else {
+            textShahada.text = Html.fromHtml(article.article)
+        }
+    }
+
+
 }
