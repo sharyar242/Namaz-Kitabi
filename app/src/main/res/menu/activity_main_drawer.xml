@@ -51,4 +51,11 @@
             android:icon="@drawable/qiriqpariz"
             android:title="@string/menu_40Parz" />
     </group>
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/setting"
+            android:title="@string/setting" />
+    </group>
 </menu>

@@ -1,52 +1,27 @@
 package com.example.h
 
-import android.content.Context
 import android.os.Bundle
-import android.os.Handler
-import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.h.ui.dualar.DualarFragment
-import com.example.h.ui.imamgaEriw.ImamgaEriwFragment
-import com.example.h.ui.janazaNamazi.JanazaNamaziFragment
-import com.example.h.ui.namaz.NamazFragment
-import com.example.h.ui.namazBuziladi.NamazBuziladiFragment
-import com.example.h.ui.namazZikirler.NamazZikirlerFragment
-import com.example.h.ui.paklik.PaklikFragment
-import com.example.h.ui.qiriqPariz.QiriqParizFragment
-import com.example.h.ui.shahada.ShahadaFragment
-import com.example.h.ui.sureler.SurelerFragment
-import com.example.h.ui.xayitJumaNamazi.XayitJumaNamaziFragment
+import com.example.h.ui.allDataBase.AllFragment
+import com.example.h.ui.settings.SettingsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var dualarFragment: DualarFragment
-    private lateinit var imamgaEriwFragment: ImamgaEriwFragment
-    private lateinit var janazaNamaziFragment: JanazaNamaziFragment
-    private lateinit var namazFragment: NamazFragment
-    private lateinit var namazBuziladiFragment: NamazBuziladiFragment
-    private lateinit var namazZikirlerFragment: NamazZikirlerFragment
-    private lateinit var paklikFragment: PaklikFragment
-    private lateinit var qiriqParizFragment: QiriqParizFragment
-    private lateinit var shahadaFragment: ShahadaFragment
-    private lateinit var surelerFragment: SurelerFragment
-    private lateinit var xayitJumaNamaziFragment: XayitJumaNamaziFragment
+    private lateinit var dataBaseFragment: AllFragment
+    private lateinit var settings: Settings
+    private lateinit var settingsFragment: SettingsFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        settings = Settings(this)
 
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
@@ -68,95 +43,99 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
 
-        shahadaFragment = ShahadaFragment()
+        dataBaseFragment = AllFragment(10)
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.nav_host_fragment, shahadaFragment)
+            .replace(R.id.nav_host_fragment, dataBaseFragment)
             .commit()
     }
-
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_paklik -> {
-                paklikFragment = PaklikFragment()
+                val fragment = AllFragment(1)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, paklikFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_dualar -> {
-                dualarFragment = DualarFragment()
+                val fragment = AllFragment(8)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, dualarFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_imamgaEriw -> {
-                imamgaEriwFragment = ImamgaEriwFragment()
+                val fragment = AllFragment(6)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, imamgaEriwFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_janaza_namazi -> {
-                janazaNamaziFragment = JanazaNamaziFragment()
+                val fragment = AllFragment(5)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, janazaNamaziFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_namaz -> {
-                namazFragment = NamazFragment()
+                val fragment = AllFragment(2)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, namazFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_namaz_zikirler -> {
-                namazZikirlerFragment = NamazZikirlerFragment()
+                val fragment = AllFragment(3)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, namazZikirlerFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_namaz_buziladi -> {
-                namazBuziladiFragment = NamazBuziladiFragment()
+                val fragment = AllFragment(4)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, namazBuziladiFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_xayit_juma_namazi -> {
-                xayitJumaNamaziFragment = XayitJumaNamaziFragment()
-                supportFragmentManager
+                 val fragment = AllFragment(7)
+                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, xayitJumaNamaziFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_sureler -> {
-                surelerFragment = SurelerFragment()
+                val fragment = AllFragment(11)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, surelerFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_40Parz -> {
-                qiriqParizFragment = QiriqParizFragment()
+                val fragment = AllFragment(9)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, qiriqParizFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
             R.id.nav_shahada -> {
-                shahadaFragment = ShahadaFragment()
+                val fragment = AllFragment(10)
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.nav_host_fragment, shahadaFragment)
+                    .replace(R.id.nav_host_fragment, fragment)
                     .commit()
             }
-
-
+            R.id.nav_setting -> {
+                settingsFragment = SettingsFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.nav_host_fragment,settingsFragment)
+                    .commit()
+            }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
@@ -170,13 +149,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    private fun updateTheme() {
+        if (settings.isAppDarkMode()) {
+            setTheme(R.style.DarkTheme)
+        } else {
+            setTheme(R.style.LightTheme)
+        }
+    }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-
-        return true
+    fun updateThemeAndRecreateActivity() {
+        updateTheme()
+        recreate()
     }
 
 

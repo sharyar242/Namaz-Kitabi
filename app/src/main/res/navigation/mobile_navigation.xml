@@ -10,15 +10,11 @@
         android:id="@+id/nav_shahada"
         android:name="com.example.h.ui.shahada.ShahadaFragment"
         android:label="@string/menu_shahada"
-        tools:layout="@layout/fragment_shahada" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
-    </fragment>
+        tools:layout="@layout/fragment_shahada" />
 
     <fragment
         android:id="@+id/nav_paklik"
-        android:name="com.example.h.ui.paklik.PaklikFragment"
+        android:name="com.example.h.ui.allDataBase.AllFragment"
         android:label="@string/menu_paklik"
         tools:layout="@layout/fragment_shahada" />
 

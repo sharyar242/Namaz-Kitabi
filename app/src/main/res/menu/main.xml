@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/btnMinus"
-        android:orderInCategory="100"
-        android:title="Minus"
-        android:icon="@drawable/minus"
-        app:showAsAction="always" />
+<!--    -->
+<!--    <item-->
+<!--        android:id="@+id/btnMinus"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/minus"-->
+<!--        android:icon="@drawable/minus"-->
+<!--        app:showAsAction="always" />-->
 
-    <item
-        android:id="@+id/btnPlus"
-        android:orderInCategory="100"
-        android:title="Plus"
-        android:icon="@drawable/plus"
-        app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/btnPlus"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/plus"-->
+<!--        android:icon="@drawable/plus"-->
+<!--        app:showAsAction="ifRoom" />-->
+
 </menu>

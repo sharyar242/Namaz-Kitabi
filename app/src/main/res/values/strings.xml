@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hамаз оқыў қағыйдалары</string>
+    <string name="app_name">Hамаз китабы</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Hамаз китабы</string>
@@ -19,4 +19,9 @@
     <string name="menu_dualar">Жүдә зәрүр дуўалар</string>
     <string name="menu_40Parz">Қырық парыз</string>
     <string name="todo">TODO</string>
+    <string name="plus">Plus</string>
+    <string name="minus">Minus</string>
+    <string name="setting">Сазламалар</string>
+    <string name="text_olshemi">Текст өлшемы</string>
+    <string name="tungi_rejim">Түнги дүзилис</string>
 </resources>
