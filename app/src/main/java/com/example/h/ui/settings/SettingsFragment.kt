@@ -40,17 +40,12 @@ class SettingsFragment: Fragment(R.layout.fragment_settings), SettingsView,
             }
         }
 
-
         knopka.setOnCheckedChangeListener { _, _ ->
             settings.changeAppMode()
             (requireActivity() as MainActivity).updateThemeAndRecreateActivity()
         }
 
     }
-
-
-
-
 
     override fun onTextSizeChanged(size: Float) {
         textShahada?.textSize = size
