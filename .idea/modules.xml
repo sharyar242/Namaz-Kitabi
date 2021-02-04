@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Hамаз_оқыў_қағыйдалары.iml" filepath="$PROJECT_DIR$/.idea/modules/Hамаз_оқыў_қағыйдалары.iml" group="Hамаз_оқыў_қағыйдалары" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Namaz-Kitabi-Hамаз_оқыў_қағыйдалары.iml" filepath="$PROJECT_DIR$/.idea/modules/Namaz-Kitabi-Hамаз_оқыў_қағыйдалары.iml" group="Hамаз_оқыў_қағыйдалары" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Hамаз оқыў қағыйдалары/app" />
     </modules>
   </component>
