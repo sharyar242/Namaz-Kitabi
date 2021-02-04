@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/s"
+        >
         <item
             android:id="@+id/nav_shahada"
             android:icon="@drawable/shahada"
@@ -14,7 +16,7 @@
             android:title="@string/menu_paklik" />
         <item
             android:id="@+id/nav_namaz"
-            android:icon="@drawable/namaz"
+            android:icon="@drawable/sujud"
             android:title="@string/menu_namaz" />
         <item
             android:id="@+id/nav_namaz_zikirler"
@@ -22,16 +24,16 @@
             android:title="@string/menu_namaz_zikirler" />
         <item
             android:id="@+id/nav_namaz_buziladi"
-            android:icon="@drawable/paklik"
+            android:icon="@drawable/exclamation"
             android:title="@string/menu_namaz_buziladi" />
         <item
             android:id="@+id/nav_janaza_namazi"
-            android:icon="@drawable/namaz"
+            android:icon="@drawable/mosque"
             android:title="@string/menu_janaza_namazi" />
 
         <item
             android:id="@+id/nav_imamgaEriw"
-            android:icon="@drawable/imamgaeriw"
+            android:icon="@drawable/arabic"
             android:title="@string/menu_imamgaEriw_xtb" />
         <item
             android:id="@+id/nav_xayit_juma_namazi"
@@ -40,7 +42,7 @@
 
         <item
             android:id="@+id/nav_sureler"
-            android:icon="@drawable/sureler"
+            android:icon="@drawable/quran"
             android:title="@string/menu_sureler" />
         <item
             android:id="@+id/nav_dualar"
@@ -48,7 +50,21 @@
             android:title="@string/menu_dualar" />
         <item
             android:id="@+id/nav_40Parz"
-            android:icon="@drawable/dualar"
+            android:icon="@drawable/qiriqpariz"
             android:title="@string/menu_40Parz" />
+    </group>
+
+    <group
+        android:id="@+id/f"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/setting"
+            android:title="@string/setting" />
+
+        <item
+            android:id="@+id/nav_About"
+            android:icon="@drawable/team"
+            android:title="@string/about" />
     </group>
 </menu>

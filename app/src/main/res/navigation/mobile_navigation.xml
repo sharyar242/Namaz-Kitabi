@@ -3,17 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_shahada">
+    app:startDestination="@id/nav_shahada"
+    tools:ignore="UnusedNavigation">
 
     <fragment
         android:id="@+id/nav_shahada"
         android:name="com.example.h.ui.shahada.ShahadaFragment"
         android:label="@string/menu_shahada"
-        tools:layout="@layout/fragment_paklik" />
+        tools:layout="@layout/fragment_shahada" />
 
     <fragment
         android:id="@+id/nav_paklik"
-        android:name="com.example.h.ui.paklik.PaklikFragment"
+        android:name="com.example.h.ui.allDataBase.AllFragment"
         android:label="@string/menu_paklik"
         tools:layout="@layout/fragment_shahada" />
 
@@ -21,19 +22,53 @@
         android:id="@+id/nav_namaz"
         android:name="com.example.h.ui.namaz.NamazFragment"
         android:label="@string/menu_namaz"
-        tools:layout="@layout/fragment_namaz" />
+        tools:layout="@layout/fragment_shahada" />
+
+    <fragment
+        android:id="@+id/nav_namaz_buziladi"
+        android:name="com.example.h.ui.namazBuziladi.NamazBuziladiFragment"
+        android:label="@string/menu_namaz_buziladi"
+        tools:layout="@layout/fragment_shahada" />
+
+    <fragment
+        android:id="@+id/nav_namaz_zikirler"
+        android:name="com.example.h.ui.namazZikirler.NamazZikirlerFragment"
+        android:label="@string/menu_namaz_zikirler"
+        tools:layout="@layout/fragment_shahada" />
+
+    <fragment
+        android:id="@+id/nav_janaza_namazi"
+        android:name="com.example.h.ui.janazaNamazi.JanazaNamaziFragment"
+        android:label="@string/menu_janaza_namazi"
+        tools:layout="@layout/fragment_shahada" />
+
+    <fragment
+        android:id="@+id/nav_imamgaEriw"
+        android:name="com.example.h.ui.imamgaEriw.ImamgaEriwFragment"
+        android:label="@string/menu_imamgaEriw_xtb"
+        tools:layout="@layout/fragment_shahada" />
+
+    <fragment
+        android:id="@+id/nav_xayit_juma_namazi"
+        android:name="com.example.h.ui.xayitJumaNamazi.XayitJumaNamaziFragment"
+        android:label="@string/menu_xayit_ham_juma_namazi"
+        tools:layout="@layout/fragment_shahada" />
 
     <fragment
         android:id="@+id/nav_sureler"
         android:name="com.example.h.ui.sureler.SurelerFragment"
         android:label="@string/menu_sureler"
-        tools:layout="@layout/fragment_sureler" />
-
+        tools:layout="@layout/fragment_shahada" />
     <fragment
         android:id="@+id/nav_dualar"
         android:name="com.example.h.ui.dualar.DualarFragment"
         android:label="@string/menu_dualar"
-        tools:layout="@layout/fragment_dualar" />
+        tools:layout="@layout/fragment_shahada" />
+    <fragment
+        android:id="@+id/nav_40Parz"
+        android:name="com.example.h.ui.qiriqPariz.QiriqParizFragment"
+        android:label="@string/menu_40Parz"
+        tools:layout="@layout/fragment_shahada" />
 
 
 </navigation>
