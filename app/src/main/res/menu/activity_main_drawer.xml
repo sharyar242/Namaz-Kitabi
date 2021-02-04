@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/s"
+        >
         <item
             android:id="@+id/nav_shahada"
             android:icon="@drawable/shahada"
@@ -52,10 +54,17 @@
             android:title="@string/menu_40Parz" />
     </group>
 
-    <group android:checkableBehavior="none">
+    <group
+        android:id="@+id/f"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_setting"
             android:icon="@drawable/setting"
             android:title="@string/setting" />
+
+        <item
+            android:id="@+id/nav_About"
+            android:icon="@drawable/team"
+            android:title="@string/about" />
     </group>
 </menu>
