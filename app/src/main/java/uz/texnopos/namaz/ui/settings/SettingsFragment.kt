@@ -13,6 +13,7 @@ import uz.texnopos.namaz.data.NamazDatabase
 import uz.texnopos.namaz.data.model.Article
 import uz.texnopos.namaz.ui.OnTextSizeChangeListener
 import kotlinx.android.synthetic.main.fragment_settings.*
+import uz.texnopos.namaz.data.firebase.FirebaseHelper
 
 
 class SettingsFragment: Fragment(R.layout.fragment_settings),
@@ -26,7 +27,7 @@ class SettingsFragment: Fragment(R.layout.fragment_settings),
         super.onViewCreated(view, savedInstanceState)
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         settings = Settings(requireContext())
-        presenter = SettingsPresenter(dao, this)
+        presenter = SettingsPresenter(dao, this, FirebaseHelper())
         presenter.getAllSettings(12)
         (requireActivity() as MainActivity).supportActionBar?.title = "Сазламалар"
         btnMinus.setOnClickListener {
@@ -67,6 +68,10 @@ class SettingsFragment: Fragment(R.layout.fragment_settings),
             textShahada.text = Html.fromHtml(article.article)
             textShahada.textSize = settings.getTextSize()
         }
+    }
+
+    override fun showError(msg: String?) {
+        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
     }
 
 

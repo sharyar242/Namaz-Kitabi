@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import uz.texnopos.namaz.MainActivity
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.Settings
@@ -17,6 +18,7 @@ import uz.texnopos.namaz.data.NamazDatabase
 import uz.texnopos.namaz.data.model.Article
 import uz.texnopos.namaz.ui.OnTextSizeChangeListener
 import kotlinx.android.synthetic.main.fragment_namaz.*
+import uz.texnopos.namaz.data.firebase.FirebaseHelper
 
 class NamazFragment(): androidx.fragment.app.Fragment(R.layout.fragment_namaz),
     NamazView,
@@ -31,7 +33,7 @@ class NamazFragment(): androidx.fragment.app.Fragment(R.layout.fragment_namaz),
         super.onViewCreated(view, savedInstanceState)
         settings = Settings(requireContext())
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
-        presenter = NamazPresenter(dao, this)
+        presenter = NamazPresenter(dao, this, FirebaseHelper())
         presenter.getAllNamaz(2)
         (requireActivity() as MainActivity).supportActionBar?.title = "Намаз оқыў тәртиплери"
     }
@@ -45,6 +47,10 @@ class NamazFragment(): androidx.fragment.app.Fragment(R.layout.fragment_namaz),
 
     override fun setNamaz(article: Article) {
         createDynamicViewsNamaz(article)
+    }
+
+    override fun showError(msg: String?) {
+        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
     }
 
     private fun createDynamicViewsNamaz(article: Article) {

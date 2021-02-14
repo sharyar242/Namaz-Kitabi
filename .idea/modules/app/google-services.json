@@ -7,18 +7,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1037227029679:android:017687dc6a496ad5f5d05a",
+        "mobilesdk_app_id": "1:1037227029679:android:50982155dff80ccaf5d05a",
         "android_client_info": {
-          "package_name": "com.example.h"
+          "package_name": "uz.texnopos.namaz"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1037227029679-3ae9e1c9usiiem54smkbb1f9g5cq7d2g.apps.googleusercontent.com",
+          "client_id": "1037227029679-vpn1eqmloce3ko2d0472agb18n0v0di3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.h",
-            "certificate_hash": "e6cbd9b952cd35979b74b7a97334210eb71055e1"
+            "package_name": "uz.texnopos.namaz",
+            "certificate_hash": "e9c061042802224f8aac4b468c7ef719139c9353"
           }
         },
         {

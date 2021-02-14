@@ -1,6 +1,5 @@
 package uz.texnopos.namaz.ui.allDataBase
 
-
 import android.content.res.Resources
 import android.graphics.Color
 import android.os.Build
@@ -10,6 +9,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import uz.texnopos.namaz.MainActivity
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.Settings
@@ -18,7 +18,7 @@ import uz.texnopos.namaz.data.NamazDatabase
 import uz.texnopos.namaz.data.model.Article
 import uz.texnopos.namaz.ui.OnTextSizeChangeListener
 import kotlinx.android.synthetic.main.fragment_paklik.*
-
+import uz.texnopos.namaz.data.firebase.FirebaseHelper
 
 class AllFragment(private val typeId: Int = 10) : androidx.fragment.app.Fragment(R.layout.fragment_paklik),
     AllView,
@@ -32,7 +32,7 @@ class AllFragment(private val typeId: Int = 10) : androidx.fragment.app.Fragment
         super.onViewCreated(view, savedInstanceState)
         settings = Settings(requireContext())
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
-        presenter = AllPresenter(dao, this)
+        presenter = AllPresenter(dao,  this, FirebaseHelper())
         presenter.getAllArticle(typeId)
         allTitles()
     }
@@ -54,7 +54,9 @@ class AllFragment(private val typeId: Int = 10) : androidx.fragment.app.Fragment
                 else -> "Null"
             }
     }
-
+    override fun showError(msg: String?) {
+        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+    }
 
     override fun onTextSizeChanged(size: Float) {
         textList.forEach {

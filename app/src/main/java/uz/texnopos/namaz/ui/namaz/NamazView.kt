@@ -4,4 +4,5 @@ import uz.texnopos.namaz.data.model.Article
 
 interface NamazView {
     fun setNamaz(article: Article)
+    fun showError(msg: String?)
 }

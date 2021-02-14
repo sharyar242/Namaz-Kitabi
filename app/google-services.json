@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1037227029679",
+    "project_id": "namaz-kitabi-5318a",
+    "storage_bucket": "namaz-kitabi-5318a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037227029679:android:50982155dff80ccaf5d05a",
+        "android_client_info": {
+          "package_name": "uz.texnopos.namaz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037227029679-vpn1eqmloce3ko2d0472agb18n0v0di3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uz.texnopos.namaz",
+            "certificate_hash": "e9c061042802224f8aac4b468c7ef719139c9353"
+          }
+        },
+        {
+          "client_id": "1037227029679-0ip6erv07s5j351pevv3sndlhks4uqqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4pTR5yZlmppjXnQFJRgYrsp2pPSs-Os8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037227029679-0ip6erv07s5j351pevv3sndlhks4uqqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
