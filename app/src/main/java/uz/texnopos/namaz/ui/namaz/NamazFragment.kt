@@ -10,40 +10,32 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import uz.texnopos.namaz.MainActivity
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.Settings
 import uz.texnopos.namaz.core.dp
 import uz.texnopos.namaz.data.NamazDatabase
 import uz.texnopos.namaz.data.model.Article
-import uz.texnopos.namaz.ui.OnTextSizeChangeListener
 import kotlinx.android.synthetic.main.fragment_namaz.*
-import uz.texnopos.namaz.data.firebase.FirebaseHelper
 
-class NamazFragment(): androidx.fragment.app.Fragment(R.layout.fragment_namaz),
-    NamazView,
-    OnTextSizeChangeListener {
+class NamazFragment(): Fragment(R.layout.fragment_namaz),
+    NamazView {
 
-
-    private lateinit var presenter : NamazPresenter
     private lateinit var settings: Settings
+    private lateinit var presenter : NamazPresenter
     private var textList = mutableListOf<TextView>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         settings = Settings(requireContext())
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
-        presenter = NamazPresenter(dao, this, FirebaseHelper())
+        presenter = NamazPresenter(dao, this)
         presenter.getAllNamaz(2)
         (requireActivity() as MainActivity).supportActionBar?.title = "Намаз оқыў тәртиплери"
     }
 
 
-    override fun onTextSizeChanged(size: Float) {
-        textList.forEach {
-            it.textSize = size
-        }
-    }
 
     override fun setNamaz(article: Article) {
         createDynamicViewsNamaz(article)

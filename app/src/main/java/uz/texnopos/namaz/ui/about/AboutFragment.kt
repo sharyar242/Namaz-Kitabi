@@ -4,17 +4,16 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.view.View
+import androidx.fragment.app.Fragment
 import uz.texnopos.namaz.MainActivity
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.Settings
 import uz.texnopos.namaz.data.NamazDatabase
 import uz.texnopos.namaz.data.model.Article
-import uz.texnopos.namaz.ui.OnTextSizeChangeListener
 import kotlinx.android.synthetic.main.fragment_about.*
 
-class AboutFragment: androidx.fragment.app.Fragment(R.layout.fragment_about),
-    AboutView,
-    OnTextSizeChangeListener {
+class AboutFragment: Fragment(R.layout.fragment_about),
+    AboutView{
 
     private lateinit var presenter : AboutPresenter
     private lateinit var settings: Settings
@@ -29,7 +28,7 @@ class AboutFragment: androidx.fragment.app.Fragment(R.layout.fragment_about),
         (requireActivity() as MainActivity).supportActionBar?.title = "Биз хаққымизда"
     }
 
-    override fun setAllArticle(article: Article) {
+    override fun setAboutArticle(article: Article) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             textAbout.text = Html.fromHtml(article.article, Html.FROM_HTML_MODE_COMPACT)
             textAbout.textSize = settings.getTextSize()
@@ -39,8 +38,6 @@ class AboutFragment: androidx.fragment.app.Fragment(R.layout.fragment_about),
         }
     }
 
-    override fun onTextSizeChanged(size: Float) {
-        textAbout?.textSize = size
-    }
+
 
 }

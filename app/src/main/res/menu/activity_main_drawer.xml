@@ -52,15 +52,13 @@
             android:id="@+id/nav_40Parz"
             android:icon="@drawable/qiriqpariz"
             android:title="@string/menu_40Parz" />
+
     </group>
 
     <group
         android:id="@+id/f"
         android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_setting"
-            android:icon="@drawable/setting"
-            android:title="@string/setting" />
+
 
         <item
             android:id="@+id/nav_About"
