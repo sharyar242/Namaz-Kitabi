@@ -2,14 +2,13 @@ package uz.texnopos.namaz.ui.paklik
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_service.*
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.data.User
 
-class PaklikService(): Fragment(R.layout.fragment_service) {
+class PaklikService(): androidx.fragment.app.Fragment(R.layout.fragment_service) {
 
     private val myAdapter = PaklikAdapter()
     private lateinit var navController: NavController
@@ -19,8 +18,8 @@ class PaklikService(): Fragment(R.layout.fragment_service) {
         navController = Navigation.findNavController(view)
         rvService.adapter = myAdapter
         myAdapter.onItemClicked = { id, type ->
-            val action =
-            navController.navigate(action)
+           //val action =
+           //    navController.navigate(action)
         }
 //        val dao = NamazDatabase.getInstance(requireContext()).articleDao()
 //        presenter = PaklikPresenter(dao, this)

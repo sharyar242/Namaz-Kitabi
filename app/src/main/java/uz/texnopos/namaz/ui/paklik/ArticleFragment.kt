@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_paklik.*
 import uz.texnopos.namaz.MainActivity
+import uz.texnopos.namaz.PaklikFragmentArgs
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.core.dp
 import uz.texnopos.namaz.data.NamazDatabase
@@ -24,7 +25,7 @@ class ArticleFragment: Fragment(R.layout.fragment_paklik) , PaklikView{
     private var textList = mutableListOf<TextView>()
 
 
-    private val safeArgs: ArticleFragmentArgs by navArgs()
+    private val safeArgs: PaklikFragmentArgs by navArgs()
     private var type: Int = 0
 
 
