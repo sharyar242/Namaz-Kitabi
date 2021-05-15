@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_paklik.*
 import uz.texnopos.namaz.MainActivity
-import uz.texnopos.namaz.PaklikFragmentArgs
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.core.dp
 import uz.texnopos.namaz.data.NamazDatabase
@@ -25,7 +24,7 @@ class ArticleFragment: Fragment(R.layout.fragment_paklik) , PaklikView{
     private var textList = mutableListOf<TextView>()
 
 
-    private val safeArgs: PaklikFragmentArgs by navArgs()
+    private val safeArgs:  by navArgs()
     private var type: Int = 0
 
 
@@ -36,7 +35,7 @@ class ArticleFragment: Fragment(R.layout.fragment_paklik) , PaklikView{
 
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         presenter = PaklikPresenter(dao, this)
-        presenter.getPaklikArticle(13)
+        presenter.getPaklikArticle(type)
         (requireActivity() as MainActivity).supportActionBar?.title = "Биз хаққымизда"
 
     }
