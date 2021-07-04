@@ -4,10 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import uz.texnopos.namaz.data.dao.ArticlesDao
 import uz.texnopos.namaz.data.model.Article
+import uz.texnopos.namaz.data.model.Juma
+import uz.texnopos.namaz.data.model.Namaz
+import uz.texnopos.namaz.data.model.Sureler
 
-@Database(entities = [Article::class], version = 1)
+
+@Database(entities = [Article::class, Namaz::class, Sureler::class,Juma::class], version = 1)
 
 abstract class NamazDatabase: RoomDatabase() {
 

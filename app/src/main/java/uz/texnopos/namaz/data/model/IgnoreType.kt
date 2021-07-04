@@ -1,4 +1,7 @@
 package uz.texnopos.namaz.data.model
 
-class IgnoreType {
-}
+import androidx.room.Ignore
+
+open class IgnoreType (
+    @Ignore
+    var type: Int)

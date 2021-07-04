@@ -31,7 +31,7 @@ class ShahadaFragment() : Fragment(R.layout.fragment_paklik),
         settings = Settings(requireContext())
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         presenter = ShahadaPresenter(dao,this)
-        presenter.getShahadaArticle(10)
+        presenter.getShahadaArticle(8)
     //    allTitles()
     }
 
@@ -67,19 +67,19 @@ class ShahadaFragment() : Fragment(R.layout.fragment_paklik),
         val textPair: MutableList<Pair<Int, Int>> = mutableListOf()
         val imagePair: MutableList<Pair<Int, Int>> = mutableListOf()
         var string = article.article
-        var i1 = string.indexOf('{')
+        var i1 = string!!.indexOf('{')
         var i2 = -1
         while (i1 != -1) {
             textPair.add(Pair(i2+1, i1-1))
-            i2 = string.indexOf('}')
-            val chars = string.toCharArray()
+            i2 = string!!.indexOf('}')
+            val chars = string!!.toCharArray()
             chars[i1] = '*'
             chars[i2] = '*'
             string = String(chars)
             imagePair.add(Pair(i1+1, i2))
             i1 = string.indexOf('{')
         }
-        textPair.add(Pair(i2+1, string.length-1))
+        textPair.add(Pair(i2+1, string!!.length-1))
         /////////////////////////////////////////////////////////////////////////////////
         for (i in 0 until textPair.size-1) {
             if (textPair[i].first < textPair[i].second) {

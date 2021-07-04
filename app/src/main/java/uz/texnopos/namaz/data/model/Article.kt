@@ -17,4 +17,4 @@ class Article (
     @ColumnInfo(name = "article")
     val article: String
 
-    )
+    ):IgnoreType(1)

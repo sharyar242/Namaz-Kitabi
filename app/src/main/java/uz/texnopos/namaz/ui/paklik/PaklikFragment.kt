@@ -18,26 +18,31 @@ import uz.texnopos.namaz.core.dp
 import uz.texnopos.namaz.data.NamazDatabase
 import uz.texnopos.namaz.data.model.Article
 
-class ArticleFragment: Fragment(R.layout.fragment_paklik) , PaklikView{
+class PaklikFragment: Fragment(R.layout.fragment_paklik) , PaklikView {
 
     private lateinit var presenter : PaklikPresenter
     private var textList = mutableListOf<TextView>()
-
-
-    private val safeArgs:  by navArgs()
-    private var type: Int = 0
+    private val safeArgs: PaklikFragmentArgs by navArgs()
+    private var index: Int = 1
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        type = safeArgs.type
-
-
+        index = safeArgs.id
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         presenter = PaklikPresenter(dao, this)
-        presenter.getPaklikArticle(type)
-        (requireActivity() as MainActivity).supportActionBar?.title = "Биз хаққымизда"
+        presenter.getPaklikArticle(index)
+        allPaklik()
+    }
 
+    private fun allPaklik() {
+        (requireActivity() as MainActivity).supportActionBar?.title =
+            when (index) {
+                1 -> "Таҳәрат"
+                2 -> "Таяммум"
+                3 -> "Ғусыл"
+                else -> "Null"
+            }
     }
     override fun setPaklikArticle(article: Article) {
         createDynamicViews(article)

@@ -24,7 +24,7 @@ class AboutFragment: Fragment(R.layout.fragment_about),
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         settings = Settings(requireContext())
         presenter = AboutPresenter(dao, this)
-        presenter.getAllArticle(13)
+        presenter.getAllArticle(4)
         (requireActivity() as MainActivity).supportActionBar?.title = "Биз хаққымизда"
     }
 

@@ -4,6 +4,6 @@ import uz.texnopos.namaz.data.dao.ArticlesDao
 
 class QiriqParzPresenter(private val dao: ArticlesDao, private val view: QiriqParzView) {
     fun getQiriqParzArticle(id: Int) {
-        view.setQiriqParzArticle(dao.getArticleById(id))
+        view.setQiriqParzArticle(dao.getArticleById(id)!!)
     }
 }

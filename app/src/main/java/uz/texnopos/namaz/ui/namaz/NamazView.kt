@@ -1,8 +1,7 @@
 package uz.texnopos.namaz.ui.namaz
 
-import uz.texnopos.namaz.data.model.Article
+import uz.texnopos.namaz.data.model.Namaz
 
 interface NamazView {
-    fun setNamaz(article: Article)
-    fun showError(msg: String?)
+    fun setNamaz(article: Namaz)
 }

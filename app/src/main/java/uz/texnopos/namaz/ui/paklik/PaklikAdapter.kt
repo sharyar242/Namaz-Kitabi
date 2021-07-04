@@ -10,13 +10,13 @@ import uz.texnopos.namaz.data.User
 
 class PaklikAdapter: RecyclerView.Adapter<PaklikAdapter.ViewHolder>() {
 
-    var onItemClicked: (id: Int, type: Int) -> Unit = {_, _ ->}
+    var onItemClicked: (id: Int) -> Unit = {_ ->}
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        fun populateModel(data: User, type: Int){
+        fun populateModel(data: User, id: Int){
             itemView.tvItem.text = data.title
-            itemView.setOnClickListener {
-                onItemClicked.invoke(1, type+1)
+            itemView.tvItem.setOnClickListener {
+                onItemClicked.invoke(id+1)
             }
 
         }
@@ -30,7 +30,7 @@ class PaklikAdapter: RecyclerView.Adapter<PaklikAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PaklikAdapter.ViewHolder {
-        var item = LayoutInflater.from(parent.context).inflate(R.layout.fragment_items, parent, false)
+        val item = LayoutInflater.from(parent.context).inflate(R.layout.fragment_items, parent, false)
         return ViewHolder(item)
     }
 

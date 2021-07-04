@@ -18,27 +18,7 @@
             android:id="@+id/nav_namaz"
             android:icon="@drawable/sujud"
             android:title="@string/menu_namaz" />
-        <item
-            android:id="@+id/nav_namaz_zikirler"
-            android:icon="@drawable/zikir"
-            android:title="@string/menu_namaz_zikirler" />
-        <item
-            android:id="@+id/nav_namaz_buziladi"
-            android:icon="@drawable/exclamation"
-            android:title="@string/menu_namaz_buziladi" />
-        <item
-            android:id="@+id/nav_janaza_namazi"
-            android:icon="@drawable/mosque"
-            android:title="@string/menu_janaza_namazi" />
 
-        <item
-            android:id="@+id/nav_imamgaEriw"
-            android:icon="@drawable/arabic"
-            android:title="@string/menu_imamgaEriw_xtb" />
-        <item
-            android:id="@+id/nav_xayit_juma_namazi"
-            android:icon="@drawable/imamgaeriw"
-            android:title="@string/menu_xayit_ham_juma_namazi" />
 
         <item
             android:id="@+id/nav_sureler"
@@ -58,8 +38,6 @@
     <group
         android:id="@+id/f"
         android:checkableBehavior="single">
-
-
         <item
             android:id="@+id/nav_About"
             android:icon="@drawable/team"

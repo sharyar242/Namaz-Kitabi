@@ -16,16 +16,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-//    private lateinit var dataBaseFragment: AllFragment
-//    private lateinit var settings: Settings
-//    private lateinit var settingsFragment: SettingsFragment
-//    private lateinit var aboutFragment: AboutFragment
+    //    private lateinit var dataBaseFragment: AllFragment
+    //    private lateinit var settings: Settings
+    //    private lateinit var settingsFragment: SettingsFragment
+    //    private lateinit var aboutFragment: AboutFragment
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-     //   settings = Settings(this)
+
+        //   settings = Settings(this)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -34,21 +35,17 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_shahada, R.id.nav_paklik, R.id.nav_namaz, R.id.nav_namaz_zikirler, R.id.nav_namaz_buziladi
-                , R.id.nav_janaza_namazi, R.id.nav_imamgaEriw, R.id.nav_xayit_juma_namazi, R.id.nav_sureler
-                , R.id.nav_dualar, R.id.nav_40Parz, R.id.nav_About), drawerLayout)
+                R.id.nav_shahada, R.id.nav_paklik, R.id.nav_namaz, R.id.nav_imamgaEriw, R.id.nav_sureler,
+                R.id.nav_dualar, R.id.nav_40Parz, R.id.nav_About), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
 //        setSupportActionBar(toolbar)
 //        val actionBar = supportActionBar
 //        actionBar?.title = "Navigation Drawer"
-
-
-
-
 //        val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
 //            this,
 //            drawer_layout,

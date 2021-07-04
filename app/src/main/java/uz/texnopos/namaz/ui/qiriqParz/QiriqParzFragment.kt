@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_paklik.*
+import kotlinx.android.synthetic.main.fragment_qiriq_parz.*
 import uz.texnopos.namaz.MainActivity
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.core.dp
@@ -27,8 +27,8 @@ class QiriqParzFragment(): Fragment(R.layout.fragment_qiriq_parz),
         super.onViewCreated(view, savedInstanceState)
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         presenter = QiriqParzPresenter(dao, this)
-        presenter.getQiriqParzArticle(13)
-        (requireActivity() as MainActivity).supportActionBar?.title = "Биз хаққымизда"
+        presenter.getQiriqParzArticle(10)
+        (requireActivity() as MainActivity).supportActionBar?.title = "Қырық парыз"
     }
     override fun setQiriqParzArticle(article: Article) {
         createDynamicViews(article)
@@ -67,7 +67,7 @@ class QiriqParzFragment(): Fragment(R.layout.fragment_qiriq_parz),
                 } else {
                     textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second))
                 }
-                linearLayout.addView(textView)
+                linearLayoutPariz.addView(textView)
             }
             if (imagePair[i].first < imagePair[i].second) {
                 val imageView = ImageView(requireContext())
@@ -77,7 +77,7 @@ class QiriqParzFragment(): Fragment(R.layout.fragment_qiriq_parz),
                 imageView.layoutParams = params
                 val id = resources.getIdentifier(string.substring(imagePair[i].first, imagePair[i].second), "drawable", requireContext().packageName)
                 imageView.setBackgroundResource(id)
-                linearLayout.addView(imageView)
+                linearLayoutPariz.addView(imageView)
             }
         }
         val i = textPair.size-1
@@ -94,7 +94,7 @@ class QiriqParzFragment(): Fragment(R.layout.fragment_qiriq_parz),
             } else {
                 textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second))
             }
-            linearLayout.addView(textView)
+            linearLayoutPariz.addView(textView)
         }
 
     }

@@ -1,7 +1,7 @@
 package uz.texnopos.namaz.ui.sureler
 
-import uz.texnopos.namaz.data.model.Article
+import uz.texnopos.namaz.data.model.Sureler
 
 interface SurelerView {
-    fun setSurelerArticle(article: Article)
+    fun setSureler(article: Sureler)
 }

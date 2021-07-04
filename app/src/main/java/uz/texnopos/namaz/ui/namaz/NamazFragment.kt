@@ -9,43 +9,63 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import uz.texnopos.namaz.MainActivity
 import uz.texnopos.namaz.R
-import uz.texnopos.namaz.Settings
 import uz.texnopos.namaz.core.dp
 import uz.texnopos.namaz.data.NamazDatabase
-import uz.texnopos.namaz.data.model.Article
 import kotlinx.android.synthetic.main.fragment_namaz.*
+import uz.texnopos.namaz.data.model.Namaz
 
 class NamazFragment(): Fragment(R.layout.fragment_namaz),
-    NamazView {
+        NamazView {
 
-    private lateinit var settings: Settings
     private lateinit var presenter : NamazPresenter
     private var textList = mutableListOf<TextView>()
+    private val safeArgs: NamazFragmentArgs by navArgs()
+    private var namazId: Int = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        settings = Settings(requireContext())
+        namazId = safeArgs.namaz
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         presenter = NamazPresenter(dao, this)
-        presenter.getAllNamaz(2)
-        (requireActivity() as MainActivity).supportActionBar?.title = "Намаз оқыў тәртиплери"
+        presenter.getAllNamaz(namazId)
+        allNamaz()
+    }
+
+    private fun allNamaz() {
+        (requireActivity() as MainActivity).supportActionBar?.title =
+            when (namazId) {
+                1 -> "Намаз"
+                2 -> "Азан, азан дуўасы, тәкбир"
+                3 -> "Таң намаз"
+                4 -> "Песин намаз"
+                5 -> "Намазлыгер"
+                6 -> "Шам намаз"
+                7 -> "Қуптан ҳәм ўитр намазы"
+                8 -> "ТАҲИЯТУЛ МАСЖИД"
+                9 -> "ТӘҲӘЖЖУД НАМАЗЫ"
+                10 -> "ҲАЙЫТ НАМАЗЫ"
+                11 -> "ЖУМА НАМАЗЫ"
+                12 -> "ЖАНАЗА НАМАЗЫ"
+                13 -> "МҮСӘПИР АДАМНЫҢ НАМАЗЫ"
+                14 -> "ИМАМҒА ЕРИЎ"
+                15 -> "ҚАЗА НАМАЗ"
+                16 -> "Намаздан кейинги зикирлер"
+                17 -> "Намаз бузылатуғын жағдайлар"
+                else -> "Null"
+            }
     }
 
 
-
-    override fun setNamaz(article: Article) {
+    override fun setNamaz(article: Namaz) {
         createDynamicViewsNamaz(article)
     }
 
-    override fun showError(msg: String?) {
-        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
-    }
 
-    private fun createDynamicViewsNamaz(article: Article) {
+    private fun createDynamicViewsNamaz(article: Namaz) {
         //////////////Qay jerde text qay jerde suwret ekenin tawip aliw//////////////////
         val textPair: MutableList<Pair<Int, Int>> = mutableListOf()
         val imagePair: MutableList<Pair<Int, Int>> = mutableListOf()
@@ -73,7 +93,6 @@ class NamazFragment(): Fragment(R.layout.fragment_namaz),
                     LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
                 params.setMargins(16.dp, 16.dp, 16.dp, 16.dp)
                 textView.layoutParams = params
-                textView.textSize = settings.getTextSize()
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second), Html.FROM_HTML_MODE_COMPACT)
                 } else {
@@ -100,7 +119,6 @@ class NamazFragment(): Fragment(R.layout.fragment_namaz),
                 LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
             params.setMargins(16.dp, 16.dp, 16.dp, 16.dp)
             textView.layoutParams = params
-            textView.textSize = settings.getTextSize()
             textList.add(textView)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second), Html.FROM_HTML_MODE_COMPACT)
