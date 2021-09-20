@@ -8,26 +8,35 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="jumaNamazFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="70" />
-                            <option name="y" value="-594" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="namazFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="106" />
-                            <option name="y" value="312" />
+                            <option name="x" value="402" />
+                            <option name="y" value="304" />
                           </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="namazRecycler">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="90" />
+                            <option name="y" value="573" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_namazRecycler_to_namazFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -37,8 +46,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="368" />
+                            <option name="x" value="387" />
+                            <option name="y" value="1012" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -68,30 +77,6 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="nav_imamgaEriw">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="433" />
-                            <option name="y" value="340" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="nav_janaza_namazi">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-886" />
-                            <option name="y" value="-578" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="nav_namaz">
                     <value>
                       <LayoutPositions>
@@ -104,6 +89,11 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_nav_namaz_to_namazFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_nav_namaz_to_namazRecycler">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -167,27 +157,6 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="nav_xayit_juma_namazi">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-242" />
-                            <option name="y" value="-607" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_jumaNamazService_to_jumaNamazFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="paklikFragment">
                     <value>
                       <LayoutPositions>
@@ -206,7 +175,7 @@
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="116" />
-                            <option name="y" value="625" />
+                            <option name="y" value="947" />
                           </Point>
                         </option>
                       </LayoutPositions>
