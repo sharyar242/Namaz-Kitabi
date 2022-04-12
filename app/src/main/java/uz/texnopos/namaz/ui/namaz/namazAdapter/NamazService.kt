@@ -1,4 +1,4 @@
-package uz.texnopos.namaz.ui.namaz
+package uz.texnopos.namaz.ui.namaz.namazAdapter
 
 import android.os.Bundle
 import android.view.View
@@ -19,8 +19,8 @@ class NamazService: Fragment(R.layout.fragment_namaz_service){
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         rvServiceNamaz.adapter = myAdapter
-        myAdapter.onItemClickedNamaz= { id, type ->
-            val action = NamazServiceDirections.actionNavNamazToNamazFragment(id,type)
+        myAdapter.onItemClickedNamaz= { id ->
+            val action = NamazServiceDirections.actionNavNamazToNamazFragment(id)
             navController.navigate(action)
         }
         setData()
@@ -28,57 +28,39 @@ class NamazService: Fragment(R.layout.fragment_namaz_service){
 
     private fun setData(){
         val params: MutableList<User> = mutableListOf()
-        for (i in 1..17){
+        for (i in 1..11){
             when (i) {
                 1 -> {
-                    params.add(User("Намаз"))
+                    params.add(User("Парыз намазлар"))
                 }
                 2 -> {
-                    params.add(User("Азан, азан дуўасы, тәкбир"))
-                }
-                3 -> {
-                    params.add(User("Таң намаз"))
-                }
-                4 -> {
-                    params.add(User("Песин намаз"))
-                }
-                5 -> {
-                    params.add(User("Намазлыгер"))
-                }
-                6 -> {
-                    params.add(User("Шам намаз"))
-                }
-                7 -> {
-                    params.add(User("Қуптан ҳәм ўитр намазы"))
-                }
-                8 -> {
                     params.add(User("ТАҲИЯТУЛ МАСЖИД"))
                 }
-                9 -> {
+                3 -> {
                     params.add(User("ТӘҲӘЖЖУД НАМАЗЫ"))
                 }
-                10 -> {
+                4 -> {
                     params.add(User("ҲАЙЫТ НАМАЗЫ"))
                 }
-                11 -> {
+                5 -> {
                     params.add(User("ЖУМА НАМАЗЫ"))
                 }
-                12 -> {
+                6 -> {
                     params.add(User("ЖАНАЗА НАМАЗЫ"))
                 }
-                13 -> {
+                7 -> {
                     params.add(User("МҮСӘПИР АДАМНЫҢ НАМАЗЫ"))
                 }
-                14 -> {
+                8 -> {
                     params.add(User("ИМАМҒА ЕРИЎ"))
                 }
-                15 -> {
+                9 -> {
                     params.add(User("ҚАЗА НАМАЗ"))
                 }
-                16 -> {
+                10 -> {
                     params.add(User("Намаздан кейинги зикирлер"))
                 }
-                17 -> {
+                11 -> {
                     params.add(User("Намаз бузылатуғын жағдайлар"))
                 }
                 else -> {

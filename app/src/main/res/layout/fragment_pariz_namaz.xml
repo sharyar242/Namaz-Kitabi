@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/aaa">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutNamaz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Азан, азан дуўасы, тәкбир"
+            android:background="@drawable/buttonbackground"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="8dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Таң намаз"
+            android:background="@drawable/buttonbackground"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="8dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Песин намаз"
+            android:background="@drawable/buttonbackground"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="8dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Намазлыгер"
+            android:background="@drawable/buttonbackground"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="8dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Шам намаз"
+            android:background="@drawable/buttonbackground"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="8dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Қуптан ҳәм ўитр намазы"
+            android:background="@drawable/buttonbackground"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="8dp"
+            />
+
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

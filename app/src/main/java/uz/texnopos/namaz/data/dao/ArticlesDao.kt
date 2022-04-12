@@ -2,10 +2,7 @@ package uz.texnopos.namaz.data.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import uz.texnopos.namaz.data.model.Article
-import uz.texnopos.namaz.data.model.Juma
-import uz.texnopos.namaz.data.model.Namaz
-import uz.texnopos.namaz.data.model.Sureler
+import uz.texnopos.namaz.data.model.*
 
 @Dao
 interface ArticlesDao {
@@ -16,8 +13,11 @@ interface ArticlesDao {
     @Query("SELECT * FROM book WHERE id=:id")
     fun getArticleById(id: Int): Article
 
-    @Query("SELECT * FROM namaz")
-    fun getAllNamaz(): List<Namaz>
+    @Query("SELECT * FROM pariz_namazlar")
+    fun getAllParizNamaz(): List<ParizNamaz>
+
+    @Query("SELECT * FROM pariz_namazlar WHERE id=:id")
+    fun getParizNamazById(id:Int): ParizNamaz
 
     @Query("SELECT * FROM namaz WHERE id=:id")
     fun getNamazById(id: Int): Namaz

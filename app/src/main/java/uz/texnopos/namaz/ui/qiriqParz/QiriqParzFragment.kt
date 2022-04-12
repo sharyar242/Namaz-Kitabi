@@ -27,7 +27,7 @@ class QiriqParzFragment(): Fragment(R.layout.fragment_qiriq_parz),
         super.onViewCreated(view, savedInstanceState)
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
         presenter = QiriqParzPresenter(dao, this)
-        presenter.getQiriqParzArticle(10)
+        presenter.getQiriqParzArticle(7)
         (requireActivity() as MainActivity).supportActionBar?.title = "Қырық парыз"
     }
     override fun setQiriqParzArticle(article: Article) {

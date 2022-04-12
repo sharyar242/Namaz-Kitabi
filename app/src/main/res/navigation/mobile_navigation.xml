@@ -16,7 +16,7 @@
         android:id="@+id/nav_paklik"
         android:name="uz.texnopos.namaz.ui.paklik.PaklikService"
         android:label="@string/menu_paklik"
-        tools:layout="@layout/fragment_service" >
+        tools:layout="@layout/fragment_service">
         <action
             android:id="@+id/action_nav_paklik_to_paklikFragment"
             app:destination="@id/paklikFragment" />
@@ -24,28 +24,30 @@
 
     <fragment
         android:id="@+id/nav_namaz"
-        android:name="uz.texnopos.namaz.ui.namaz.NamazService"
+        android:name="uz.texnopos.namaz.ui.namaz.namazAdapter.NamazService"
         android:label="@string/menu_namaz"
-        tools:layout="@layout/fragment_namaz_service" >
+        tools:layout="@layout/fragment_namaz_service">
         <action
             android:id="@+id/action_nav_namaz_to_namazFragment"
             app:destination="@id/namazFragment" />
+        <action
+            android:id="@+id/action_nav_namaz_to_parizNamazFragment"
+            app:destination="@id/parizNamazFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/namazFragment"
         android:name="uz.texnopos.namaz.ui.namaz.NamazFragment"
         android:label="NamazFragment"
-        tools:layout="@layout/fragment_namaz"
-        >
+        tools:layout="@layout/fragment_namaz">
         <argument
             android:name="namaz"
-            app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="1"
+            app:argType="integer" />
         <argument
             android:name="type"
-            app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="1"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/paklikFragment"
@@ -54,8 +56,8 @@
         tools:layout="@layout/fragment_paklik">
         <argument
             android:name="id"
-            app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="1"
+            app:argType="integer" />
     </fragment>
 
 
@@ -66,12 +68,12 @@
         tools:layout="@layout/fragment_sureler">
         <argument
             android:name="id"
-            app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="1"
+            app:argType="integer" />
         <argument
             android:name="type"
-            app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="1"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/nav_sureler"
@@ -86,18 +88,32 @@
         android:id="@+id/nav_About"
         android:name="uz.texnopos.namaz.ui.about.AboutFragment"
         android:label="AboutFragment"
-        tools:layout="@layout/fragment_about"/>
+        tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/nav_dualar"
         android:name="uz.texnopos.namaz.ui.dualar.DualarFragment"
         android:label="DualarFragment"
-        tools:layout="@layout/fragment_dualar"/>
+        tools:layout="@layout/fragment_dualar" />
 
     <fragment
         android:id="@+id/nav_40Parz"
         android:name="uz.texnopos.namaz.ui.qiriqParz.QiriqParzFragment"
         android:label="QiriqParzFragment"
-        tools:layout="@layout/fragment_qiriq_parz"/>
+        tools:layout="@layout/fragment_qiriq_parz" />
+    <fragment
+        android:id="@+id/parizNamazFragment"
+        android:name="uz.texnopos.namaz.ui.namaz.parizNamaz.ParizNamazFragment"
+        android:label="ParizNamazFragment"
+        tools:layout="@layout/fragment_pariz_namaz">
+        <argument
+            android:name="parizNamazId"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="parizNamazType"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
 
 
 </navigation>

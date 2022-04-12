@@ -1,4 +1,4 @@
-package uz.texnopos.namaz.ui.namaz
+package uz.texnopos.namaz.ui.namaz.namazAdapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,16 +7,17 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_items.view.*
 import uz.texnopos.namaz.R
 import uz.texnopos.namaz.data.User
+import kotlin.reflect.typeOf
 
 class NamazAdapter: RecyclerView.Adapter<NamazAdapter.ViewHolder>() {
 
-    var onItemClickedNamaz: (id: Int, type: Int) -> Unit = {_,_ ->}
+    var onItemClickedNamaz: (id: Int) -> Unit = {_->}
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun populateModel(data: User, id: Int){
             itemView.tvItem.text = data.title
             itemView.tvItem.setOnClickListener {
-                onItemClickedNamaz.invoke(id+1,2)
+                onItemClickedNamaz.invoke(id+1)
             }
         }
     }

@@ -1,4 +1,4 @@
-package uz.texnopos.namaz.ui.shahada
+package uz.texnopos.namaz.ui.namaz.parizNamaz
 
 import android.content.res.Resources
 import android.graphics.Color
@@ -9,77 +9,52 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import uz.texnopos.namaz.MainActivity
+import androidx.navigation.fragment.navArgs
+import kotlinx.android.synthetic.main.fragment_namaz.*
 import uz.texnopos.namaz.R
-import uz.texnopos.namaz.Settings
 import uz.texnopos.namaz.core.dp
 import uz.texnopos.namaz.data.NamazDatabase
-import uz.texnopos.namaz.data.model.Article
-import kotlinx.android.synthetic.main.fragment_paklik.*
+import uz.texnopos.namaz.data.model.ParizNamaz
 
-class ShahadaFragment() : Fragment(R.layout.fragment_paklik),
-    ShahadaView {
+class ParizNamazFragment: Fragment(R.layout.fragment_pariz_namaz),ParizNamazView {
 
-    private lateinit var presenter : ShahadaPresenter
-    private lateinit var settings: Settings
+    private lateinit var presenter :ParizNamazPresenter
     private var textList = mutableListOf<TextView>()
+    private val safeArgs: ParizNamazFragmentArgs by navArgs()
+    private var parizNamazId: Int = 0
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        settings = Settings(requireContext())
+        parizNamazId = safeArgs.parizNamazId
         val dao = NamazDatabase.getInstance(requireContext()).articleDao()
-        presenter = ShahadaPresenter(dao,this)
-        presenter.getShahadaArticle(6)
-    //    allTitles()
+        presenter = ParizNamazPresenter(dao,this)
+        presenter.getAllParizNamaz(parizNamazId)
     }
 
-//    private fun allTitles(){
-//        (requireActivity() as MainActivity).supportActionBar?.title =
-//            when(typeId) {
-//                1-> "Таҳәрат, таяммум ҳәм ғусыл"
-//                3-> "Намаздан кейинги зикирлер"
-//                4-> "Намаз бузылатуғын жағдайлар"
-//                5-> "Жаназа намазы тәртиби"
-//                6-> "Мүсәпирдиң намазы, имамға ериў, қаза намаз"
-//                7-> "Ҳайыт ҳәм жума намазлары"
-//                8-> "Жүдә зәрүр дуўалар"
-//                9-> "Қырық парыз"
-//                10-> "Алты диний кәлийма"
-//                11-> "Қысқа сүрелер"
-//                12-> "Сазламалар"
-//                else -> "Null"
-//            }
-//    }
-    override fun showError(msg: String?) {
-        Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+    override fun setParizNamaz(article: ParizNamaz) {
+        createDynamicViewsNamaz(article)
     }
 
-
-
-    override fun setShahadaArticle(article: Article) {
-        createDynamicViews(article)
-    }
-
-    private fun createDynamicViews(article: Article) {
+    private fun createDynamicViewsNamaz(article: ParizNamaz) {
         //////////////Qay jerde text qay jerde suwret ekenin tawip aliw//////////////////
         val textPair: MutableList<Pair<Int, Int>> = mutableListOf()
         val imagePair: MutableList<Pair<Int, Int>> = mutableListOf()
         var string = article.article
-        var i1 = string!!.indexOf('{')
+        var i1 = string.indexOf('{')
         var i2 = -1
         while (i1 != -1) {
             textPair.add(Pair(i2+1, i1-1))
-            i2 = string!!.indexOf('}')
-            val chars = string!!.toCharArray()
+            i2 = string.indexOf('}')
+            val chars = string.toCharArray()
             chars[i1] = '*'
             chars[i2] = '*'
             string = String(chars)
             imagePair.add(Pair(i1+1, i2))
             i1 = string.indexOf('{')
         }
-        textPair.add(Pair(i2+1, string!!.length-1))
+        textPair.add(Pair(i2+1, string.length-1))
         /////////////////////////////////////////////////////////////////////////////////
         for (i in 0 until textPair.size-1) {
             if (textPair[i].first < textPair[i].second) {
@@ -90,23 +65,22 @@ class ShahadaFragment() : Fragment(R.layout.fragment_paklik),
                     LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
                 params.setMargins(16.dp, 16.dp, 16.dp, 16.dp)
                 textView.layoutParams = params
-                textView.textSize = settings.getTextSize()
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second), Html.FROM_HTML_MODE_COMPACT)
                 } else {
                     textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second))
                 }
-                linearLayout.addView(textView)
+                linearLayoutNamaz.addView(textView)
             }
             if (imagePair[i].first < imagePair[i].second) {
                 val imageView = ImageView(requireContext())
                 val params: LinearLayout.LayoutParams =
-                    LinearLayout.LayoutParams(getWidth()-32.dp, ((getWidth()-32.dp)*1.52).toInt())
-                params.setMargins(16.dp, 16.dp, 16.dp, 16.dp)
+                    LinearLayout.LayoutParams(getWidth()-32.dp, ((getWidth()-32.dp)*1.52/2).toInt())
+                params.setMargins(16.dp, 16.dp,  16.dp, 0)
                 imageView.layoutParams = params
                 val id = resources.getIdentifier(string.substring(imagePair[i].first, imagePair[i].second), "drawable", requireContext().packageName)
                 imageView.setBackgroundResource(id)
-                linearLayout.addView(imageView)
+                linearLayoutNamaz.addView(imageView)
             }
         }
         val i = textPair.size-1
@@ -117,18 +91,16 @@ class ShahadaFragment() : Fragment(R.layout.fragment_paklik),
                 LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
             params.setMargins(16.dp, 16.dp, 16.dp, 16.dp)
             textView.layoutParams = params
-            textView.textSize = settings.getTextSize()
             textList.add(textView)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second), Html.FROM_HTML_MODE_COMPACT)
             } else {
                 textView.text = Html.fromHtml(string.substring(textPair[i].first, textPair[i].second))
             }
-            linearLayout.addView(textView)
+            linearLayoutNamaz.addView(textView)
         }
 
     }
-
     private fun getWidth() : Int {
         val display = Resources.getSystem().displayMetrics
         return display.widthPixels
