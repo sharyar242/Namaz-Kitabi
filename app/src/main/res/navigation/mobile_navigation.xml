@@ -32,7 +32,7 @@
             app:destination="@id/namazFragment" />
         <action
             android:id="@+id/action_nav_namaz_to_parizNamazFragment"
-            app:destination="@id/parizNamazFragment" />
+            app:destination="@id/parizNamazService" />
     </fragment>
 
     <fragment
@@ -101,16 +101,30 @@
         android:label="QiriqParzFragment"
         tools:layout="@layout/fragment_qiriq_parz" />
     <fragment
-        android:id="@+id/parizNamazFragment"
-        android:name="uz.texnopos.namaz.ui.namaz.parizNamaz.ParizNamazFragment"
-        android:label="ParizNamazFragment"
-        tools:layout="@layout/fragment_pariz_namaz">
+        android:id="@+id/parizNamazService"
+        android:name="uz.texnopos.namaz.ui.parizNamaz.adapter.ParizNamazService"
+        android:label="Парыз намазлар"
+        tools:layout="@layout/pariz_namaz_service">
         <argument
             android:name="parizNamazId"
             app:argType="integer"
             android:defaultValue="1" />
         <argument
             android:name="parizNamazType"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_parizNamazService_to_parizNamazFragment"
+            app:destination="@id/parizNamazFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/parizNamazFragment"
+        android:name="uz.texnopos.namaz.ui.parizNamaz.ParizNamazFragment"
+        android:label="ParizNamazFragment"
+        tools:layout="@layout/pariz_namaz_fragment">
+        <argument
+            android:name="parizId"
             app:argType="integer"
             android:defaultValue="1" />
     </fragment>

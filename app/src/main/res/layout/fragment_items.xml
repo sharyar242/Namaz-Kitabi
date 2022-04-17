@@ -29,7 +29,6 @@
         android:text="Lekciya"
         android:textColor="#000000"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/on"
         app:layout_constraintStart_toEndOf="@id/shep" />
 

@@ -78,6 +78,9 @@ class NamazFragment(): Fragment(R.layout.fragment_namaz),
         }
         textPair.add(Pair(i2+1, string.length-1))
         /////////////////////////////////////////////////////////////////////////////////
+
+
+        //////////////////////////////////////////////////////////////////////
         for (i in 0 until textPair.size-1) {
             if (textPair[i].first < textPair[i].second) {
                 val textView = TextView(requireContext())

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/aaa">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutParizNamaz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvServiceParizNamaz"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        />
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearLayoutNamaz"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/azan"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:text="Азан, азан дуўасы, тәкбир"-->
+<!--            android:background="@drawable/buttonbackground"-->
+<!--            android:layout_marginStart="@dimen/margin_standard"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_standard"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            />-->
+<!--        <Button-->
+<!--            android:id="@+id/tanNamaz"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:text="Таң намаз"-->
+<!--            android:background="@drawable/buttonbackground"-->
+<!--            android:layout_marginStart="@dimen/margin_standard"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_standard"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            />-->
+<!--        <Button-->
+<!--            android:id="@+id/pesinNamaz"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:text="Песин намаз"-->
+<!--            android:background="@drawable/buttonbackground"-->
+<!--            android:layout_marginStart="@dimen/margin_standard"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_standard"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            />-->
+<!--        <Button-->
+<!--            android:id="@+id/Namazliger"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:text="Намазлыгер"-->
+<!--            android:background="@drawable/buttonbackground"-->
+<!--            android:layout_marginStart="@dimen/margin_standard"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_standard"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            />-->
+<!--        <Button-->
+<!--            android:id="@+id/shamNamaz"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:text="Шам намаз"-->
+<!--            android:background="@drawable/buttonbackground"-->
+<!--            android:layout_marginStart="@dimen/margin_standard"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_standard"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            />-->
+<!--        <Button-->
+<!--            android:id="@+id/quptanNamaz"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:text="Қуптан ҳәм ўитр намазы"-->
+<!--            android:background="@drawable/buttonbackground"-->
+<!--            android:layout_marginStart="@dimen/margin_standard"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_standard"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            />-->
+
+
+
+<!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,8 +20,13 @@ class NamazService: Fragment(R.layout.fragment_namaz_service){
         navController = Navigation.findNavController(view)
         rvServiceNamaz.adapter = myAdapter
         myAdapter.onItemClickedNamaz= { id ->
-            val action = NamazServiceDirections.actionNavNamazToNamazFragment(id)
-            navController.navigate(action)
+            if (id==1){
+                val actionPariz = NamazServiceDirections.actionNavNamazToParizNamazFragment(id)
+                navController.navigate(actionPariz)
+            }else {
+                val action = NamazServiceDirections.actionNavNamazToNamazFragment(id)
+                navController.navigate(action)
+            }
         }
         setData()
     }

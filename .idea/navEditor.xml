@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="100" />
-                            <option name="y" value="581" />
+                            <option name="x" value="136" />
+                            <option name="y" value="590" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -153,9 +153,30 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="99" />
+                            <option name="x" value="401" />
                             <option name="y" value="282" />
                           </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="parizNamazService">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="115" />
+                            <option name="y" value="282" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_parizNamazService_to_parizNamazFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
